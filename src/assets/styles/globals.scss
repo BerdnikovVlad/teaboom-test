@@ -1,0 +1,33 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  overflow-x: clip;
+  font-family: var(--font-family-body), sans-serif;
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-body);
+  color: var(--body-text-color);
+  background-color: var(--body-bg-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-weight: var(--font-weight-bold);
+}
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  color: inherit;
+}

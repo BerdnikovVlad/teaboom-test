@@ -1,0 +1,23 @@
+@mixin hover {
+  @media (any-hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin square($size) {
+  width: $size;
+  height: auto;
+  aspect-ratio: 1 / 1;
+}
+
+@mixin font-face($name, $style, $weight, $url) {
+  @font-face {
+    font-family: $name;
+    font-style: $style;
+    font-weight: $weight;
+    src: url("#{$url}.woff2") format("woff2");
+    font-display: swap;
+  }
+}

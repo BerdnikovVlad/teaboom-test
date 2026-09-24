@@ -1,0 +1,14 @@
+@use "@styles/helpers" as helpers;
+
+.container {
+  width: 100%;
+  max-width: calc(var(--container-width) + var(--container-padding) * 2px);
+  padding-inline: var(--container-padding);
+  margin-inline: auto;
+}
+
+.rouble {
+  font-family: var(--font-family-rubl), sans-serif;
+  font-style: normal;
+  font-weight: var(--font-weight-normal);
+}

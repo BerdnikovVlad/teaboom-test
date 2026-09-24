@@ -1,0 +1,21 @@
+@use "helpers" as helpers;
+@include helpers.font-face(
+  "Open Sans",
+  normal,
+  400,
+  "../fonts/OpenSans-Regular"
+);
+@include helpers.font-face(
+  "Open Sans",
+  normal,
+  500,
+  "../fonts/OpenSans-Medium"
+);
+@include helpers.font-face(
+  "Open Sans",
+  normal,
+  600,
+  "../fonts/OpenSans-SemiBold"
+);
+@include helpers.font-face("Open Sans", normal, 700, "../fonts/OpenSans-Bold");
+@include helpers.font-face("ALS Rubl", normal, 400, "../fonts/ALSRubl");

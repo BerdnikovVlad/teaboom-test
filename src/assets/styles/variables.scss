@@ -1,0 +1,60 @@
+@use "@styles/helpers" as helpers;
+
+:root {
+  --color-transparent: transparent;
+  --color-current: currentcolor;
+  --body-bg-color: #fbfbfb;
+  --body-text-color: #444;
+  --heading-text-color: #202020;
+  --button-bg-primary: #f5d730;
+  --button-bg-primary-hover: #202020;
+  --button-text-color-primary: #444;
+  --button-text-color-primary-hover: #fff;
+  --product-category-bg: #fff;
+  --product-category-border-color: #efefef;
+  --product-variant-bg: #f6f7f8;
+  --product-variant-border-color: #f0f0f0;
+  --product-variant-bg-hover: rgb(245 215 48 / 30%);
+  --product-variant-border-color-hover: #f5d730;
+  --product-variant-text-color: #444;
+  --product-variant-text-color-hover: #202020;
+  --product-sku-text-color: #808080;
+  --product-price-old: #808080;
+  --product-price-actual: #f00;
+  --product-image-bg: #fff;
+  --font-family-body: "Open Sans";
+  --font-family-rubl: "ALS Rubl";
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-size-body: 16px;
+  --line-height-body: 1.5;
+  --container-width: 1516px;
+  --container-padding: 20px;
+  --transition-duration: 300ms;
+}
+
+@include helpers.breakpoint-up(sm) {
+  :root {
+    --container-padding: 22px;
+  }
+}
+
+@include helpers.breakpoint-up(md) {
+  :root {
+    --container-padding: 24px;
+  }
+}
+
+@include helpers.breakpoint-up(xl) {
+  :root {
+    --container-padding: 32px;
+  }
+}
+
+@include helpers.breakpoint-up(4xl) {
+  :root {
+    --container-padding: 0;
+  }
+}

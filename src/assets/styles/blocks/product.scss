@@ -1,0 +1,215 @@
+@use "@styles/helpers" as helpers;
+
+.product {
+  padding-block: helpers.fluid(60, 40);
+
+  &__header {
+    margin-block-end: 24px;
+
+    @include helpers.breakpoint-up(xl) {
+      margin-block-end: 32px;
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: helpers.fluid(40, 20);
+
+    @include helpers.breakpoint-up(md) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__image {
+    @include helpers.breakpoint-up(md) {
+      align-self: self-start;
+    }
+  }
+}
+
+.product-image {
+  display: block;
+  background-color: var(--product-image-bg);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.product-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.product-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.product-title {
+  font-size: 26px;
+  line-height: 32px;
+  color: var(--heading-text-color);
+
+  @include helpers.breakpoint-up(lg) {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+
+.product-sku {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: var(--font-weight-medium);
+  line-height: 20px;
+  color: var(--product-sku-text-color);
+
+  @include helpers.breakpoint-up(lg) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__label {
+    margin-inline-end: 4px;
+  }
+}
+
+.product-price {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 4px 8px;
+  align-items: baseline;
+  font-weight: var(--font-weight-medium);
+
+  &__block {
+    display: inline-flex;
+    gap: 4px;
+    align-items: center;
+  }
+}
+
+.product-price-actual {
+  font-size: 24px;
+  line-height: 32px;
+  color: var(--product-price-actual);
+
+  @include helpers.breakpoint-up(lg) {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+.product-price-old {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--product-price-old);
+}
+
+.product-variants,
+.product-description {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  &__title {
+    font-size: 18px;
+    font-weight: var(--font-weight-semibold);
+    line-height: 26px;
+    color: var(--heading-text-color);
+  }
+}
+
+.product-variants {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+
+    @include helpers.breakpoint-up(lg) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+.product-variant {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  padding: 8px;
+  font-size: 14px;
+  font-weight: var(--font-weight-semibold);
+  line-height: 20px;
+  color: var(--product-variant-text-color);
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  background-color: var(--product-variant-bg);
+  border: 1px solid var(--product-variant-border-color);
+
+  @include helpers.hover {
+    color: var(--product-variant-text-color-hover);
+    background-color: var(--product-variant-bg-hover);
+    border-color: var(--product-variant-border-color-hover);
+  }
+
+  &.is-active {
+    color: var(--product-variant-text-color-hover);
+    background-color: var(--product-variant-bg-hover);
+    border-color: var(--product-variant-border-color-hover);
+  }
+}
+
+.product-description {
+  &__text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.product-category {
+  position: relative;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 8px;
+  overflow: hidden;
+  font-size: 14px;
+  font-weight: var(--font-weight-semibold);
+  line-height: 20px;
+  text-decoration: none;
+  background-color: var(--product-category-bg);
+  border: 1px solid var(--product-category-border-color);
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    content: "";
+    background-color: var(--product-category-border-color);
+    transform: translateX(-100%);
+    transition-duration: var(--transition-duration);
+  }
+
+  @include helpers.hover {
+    &::before {
+      transform: translateX(0);
+    }
+  }
+
+  &__image {
+    @include helpers.square(64px);
+
+    flex-shrink: 0;
+  }
+}
